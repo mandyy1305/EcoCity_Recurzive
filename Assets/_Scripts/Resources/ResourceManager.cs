@@ -4,7 +4,7 @@ public class ResourceManager : MonoBehaviour
 {
     public static ResourceManager instance;
 
-    public int startingCurrency = 100;
+    public int startingCurrency;
 
     [SerializeField]
     private int currency;
@@ -22,6 +22,11 @@ public class ResourceManager : MonoBehaviour
             instance = this;
         else
             Destroy(gameObject);
+    }
+
+    private void Start()
+    {
+        currency = startingCurrency;
     }
 
     public void AddCurrency(int amount)

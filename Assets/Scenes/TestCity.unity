@@ -627,7 +627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604d2d338b12da84099f8fb47e05ac6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingPrefab: {fileID: 3356515890993967360, guid: d84bb3f22c1236f4f9f27d08e788c04b,
+  buildingPrefab: {fileID: 1805014954534691036, guid: ff4c5809c0114104a95f799a8f7fde88,
     type: 3}
   buildingCost: 0
 --- !u!1001 &216624207
@@ -1280,6 +1280,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24d8d235ed3d3c34eb8a6e414e0af0ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingCurrency: 1000
+  currency: 0
 --- !u!1001 &432392175
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4979,8 +4981,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1838929309}
-  - component: {fileID: 1838929310}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5066,27 +5067,6 @@ Transform:
   - {fileID: 1760240219}
   m_Father: {fileID: 864200752}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1838929310
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1838929308}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 20, y: 0.001, z: 20}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1846475233
 PrefabInstance:
   m_ObjectHideFlags: 0
