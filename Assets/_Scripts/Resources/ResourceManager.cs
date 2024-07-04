@@ -27,16 +27,19 @@ public class ResourceManager : MonoBehaviour
     private void Start()
     {
         currency = startingCurrency;
+        UIManager.Instance.UpdateMoney(currency);
     }
 
     public void AddCurrency(int amount)
     {
         currency += amount;
+        UIManager.Instance.UpdateMoney(currency);
     }
 
     public void RemoveCurrency(int amount)
     {
         currency -= amount;
+        UIManager.Instance.UpdateMoney(currency);
     }
 
     public bool CanAfford(int amount)

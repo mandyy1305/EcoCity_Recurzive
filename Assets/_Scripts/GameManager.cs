@@ -7,42 +7,45 @@ public class GameManager : MonoBehaviour
     public static int totalResidents;
     public static float averageHappinessIndex;
 
-    public static int totalApartments_50cap;
-    public static int totalApartments_30cap;
-    public static int totalApartments_5cap;
+    public static int totalHomedResidents;
+    public static int totalHomelessResidents;
 
-    public static int totalApartments;
-    public static int totalApartmentCapacity;
+    //Coverages
+    public static float healthCoverage;
+    public static float literacyCoverage;
+    public static float retailCoverage;
+
+
+    //Inspector Values
+    public int waitForSeconds;
+    private Coroutine coroutine;
 
     private void Start()
     {
         totalResidents = 1000;
+        totalHomedResidents = 0;
+        totalHomelessResidents = totalResidents - totalHomedResidents;
+
         averageHappinessIndex = 82f;
+        UIManager.Instance.UpdateHappiness(averageHappinessIndex);
+
+        coroutine = StartCoroutine(IncrementPopulation());
     }
 
 
-    public static void UpdateApartments_50cap()
+    public static void UpdateHomedResidentsNumber(int value)
     {
-        totalApartments_50cap++;
-        totalApartments++;
-        totalApartmentCapacity += 50;
+        if(totalHomedResidents < totalResidents)
+        {
+            totalHomedResidents += value;
+            totalHomelessResidents = totalResidents - totalHomedResidents;
+
+            Debug.Log("Homed: " + totalHomedResidents + " Homeless: " + totalHomelessResidents);
+        }
     }
 
-    public static void UpdateApartments_30cap()
-    {
-        totalApartments_30cap++;
-        totalApartments++;
-        totalApartmentCapacity += 30;
-    }
 
-    public static void UpdateApartments_5cap()
-    {
-        totalApartments_5cap++;
-        totalApartments++;
-        totalApartmentCapacity += 5;
-    }
-
-    public static void UpdateAverageHappinessIndexOnBuildings(int residentCapacity, float increaseHappinessBy)
+    public static void UpdateAverageHappinessIndexOnBuildingPlaced(int residentCapacity, float increaseHappinessBy)
     {
         //If all residents have houses to live in, no change in happinessIndex
 
@@ -56,5 +59,23 @@ public class GameManager : MonoBehaviour
         averageHappinessIndex = updatedHappinessTotal / totalResidents;
 
         Debug.Log("Updated Happiness: " + averageHappinessIndex);
+
+        //Change UI Happiness
+        UIManager.Instance.UpdateHappiness(averageHappinessIndex);
+
+    }
+
+    IEnumerator IncrementPopulation()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(waitForSeconds);
+            totalResidents++;
+            UIManager.Instance.UpdatePopulation(totalResidents);
+
+            //Decrement Happiness index
+            averageHappinessIndex -= totalHomelessResidents * 0.001f;
+            UIManager.Instance.UpdateHappiness(averageHappinessIndex);
+        }
     }
 }

@@ -20,6 +20,7 @@ public class Building : MonoBehaviour, ICannotPlaceHere
     [Range(25f, 80f)]
     public float scanRadius;
     public float increaseHappinessBy;
+    public float revenueOnDemolish;
 
     public static event Action<Building> OnBuildingPlaced;
 
@@ -94,6 +95,15 @@ public class Building : MonoBehaviour, ICannotPlaceHere
             {
                 isPlaced = true;
                 OnBuildingPlaced?.Invoke(this);
+                ResourceManager.instance.RemoveCurrency(buildingCost);
+                UIManager.Instance.CurrentlyEnabledUI().SetActive(false);
+                UIManager.Instance.IsAnyUIEnabled(false);
+
+                if(this is ResidentialBuilding residentialBuilding)
+                {
+                    GameManager.UpdateHomedResidentsNumber(residentialBuilding.residentCapacity);
+                }
+
             }
         }
 
@@ -101,4 +111,12 @@ public class Building : MonoBehaviour, ICannotPlaceHere
             Destroy(gameObject);
 
     }
+
+
+    public void DemolishBuilding()
+    {
+        ResourceManager.instance.AddCurrency((int)revenueOnDemolish);
+        Destroy(gameObject);
+    }
+
 }

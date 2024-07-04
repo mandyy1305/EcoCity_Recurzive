@@ -7,12 +7,12 @@ public class ResidentialBuilding : Building
 {
     [Space(10)]
     [Header("Building Properties")]
-    public float revenueOnDemolish;
     public int residentCapacity;
 
     [Space(10)]
     [Header("Gizmos")]
     public Color gizmoColor = Color.yellow;
+
 
     public override void Start()
     {
@@ -39,8 +39,18 @@ public class ResidentialBuilding : Building
         if (distance < building.scanRadius)
         {
             //Update Happiness Index
-            GameManager.UpdateAverageHappinessIndexOnBuildings(residentCapacity, building.increaseHappinessBy);
+            GameManager.UpdateAverageHappinessIndexOnBuildingPlaced(residentCapacity, building.increaseHappinessBy);
+
+            //Check if a commercial store has been setup
+            //To know at the time of establishment how many people are near the store to generate revenue accordingly
+            if(building is CommercialBuilding commercialBuilding)
+            {
+                commercialBuilding.residentsAroundRadius += residentCapacity;
+            }
         }
+
+
+        //Update Total Residents
     }
 
     #region Enable Disable

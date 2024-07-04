@@ -12,10 +12,14 @@ public class UIManager : MonoBehaviour
     [SerializeField] private InventoryButton currentlyEnabledUIInventoryButton;
     [SerializeField] private bool isAnyUIEnabled;
 
-    [SerializeField] private int currentHappiness;
+    [SerializeField] private float currentHappiness;
+    [SerializeField] private int currentPopulation;
 
     [SerializeField] private Image happinessRadialImage;
     [SerializeField] private TextMeshProUGUI happinessText;
+
+    [SerializeField] private TextMeshProUGUI populationText;
+    [SerializeField] private TextMeshProUGUI moneyText;
 
     private void Awake()
     {
@@ -27,7 +31,7 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        UpdateHappiness(100);
+        
     }
 
     public GameObject CurrentlyEnabledUI()
@@ -57,16 +61,28 @@ public class UIManager : MonoBehaviour
         isAnyUIEnabled = value;
     }
 
-    public void UpdateHappiness(int value)
+    public void UpdateHappiness(float value)
     {
         currentHappiness = value;
+        currentHappiness = Mathf.Round(currentHappiness * 100.0f) * 0.01f;
         currentHappiness = Mathf.Clamp(currentHappiness, 0, 100);
 
         happinessRadialImage.fillAmount = currentHappiness / 100f;
         happinessText.text = $"{currentHappiness}%";
     }
-    
-    public int GetHappiness()
+
+    public void UpdatePopulation(int value)
+    {
+        currentPopulation = value;
+        populationText.text = $"{currentPopulation}";
+    }
+
+    public void UpdateMoney(int value)
+    {
+        moneyText.text = $"{value}";
+    }
+
+    public float GetHappiness()
     {
         return currentHappiness;
     }
