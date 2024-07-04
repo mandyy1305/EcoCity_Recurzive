@@ -96,7 +96,7 @@ public class Building : MonoBehaviour, ICannotPlaceHere
                 isPlaced = true;
                 OnBuildingPlaced?.Invoke(this);
                 ResourceManager.instance.RemoveCurrency(buildingCost);
-                UIManager.Instance.CurrentlyEnabledUI().SetActive(false);
+                UIManager.Instance.CurrentlyEnabledUI(null, null);
                 UIManager.Instance.IsAnyUIEnabled(false);
 
                 if(this is ResidentialBuilding residentialBuilding)

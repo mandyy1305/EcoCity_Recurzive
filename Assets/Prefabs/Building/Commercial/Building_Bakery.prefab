@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1950460359946889595}
   - component: {fileID: 7236785081430421312}
   - component: {fileID: 2997146560409584453}
+  - component: {fileID: 5237446198345902335}
   m_Layer: 0
   m_Name: Building_Bakery
   m_TagString: Untagged
@@ -181,6 +182,7 @@ MonoBehaviour:
   revenueOnDemolish: 0
   taxGenerated: 1
   waitForSeconds: 3
+  residentsAroundRadius: 0
   gizmoColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &2997146560409584453
 MonoBehaviour:
@@ -199,6 +201,31 @@ MonoBehaviour:
   endPositionOffset: {x: 0, y: 5, z: 0}
   startScale: 0
   endScale: 1
+--- !u!114 &5237446198345902335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148005865176407714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3d7b47613f0ab241be3458085ddb0be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingCost: 0
+  isPlaced: 0
+  canBePlaced: 0
+  grassMask:
+    serializedVersion: 2
+    m_Bits: 0
+  scanRadius: 0
+  increaseHappinessBy: 0
+  revenueOnDemolish: 0
+  taxGenerated: 0
+  waitForSeconds: 0
+  residentsAroundRadius: 0
+  gizmoColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &2122670007940619235
 GameObject:
   m_ObjectHideFlags: 0

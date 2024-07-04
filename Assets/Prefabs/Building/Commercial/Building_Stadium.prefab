@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7382794371433701121}
   - component: {fileID: 1332131946676693767}
   - component: {fileID: 5947833668422736242}
+  - component: {fileID: -807660495407309689}
   m_Layer: 0
   m_Name: Building_Stadium
   m_TagString: Untagged
@@ -128,6 +129,7 @@ MonoBehaviour:
     m_Bits: 64
   scanRadius: 0
   increaseHappinessBy: 0
+  revenueOnDemolish: 0
 --- !u!65 &1332131946676693767
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -176,3 +178,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &-807660495407309689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5202782325371711742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3d7b47613f0ab241be3458085ddb0be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingCost: 0
+  isPlaced: 0
+  canBePlaced: 0
+  grassMask:
+    serializedVersion: 2
+    m_Bits: 0
+  scanRadius: 0
+  increaseHappinessBy: 0
+  revenueOnDemolish: 0
+  taxGenerated: 0
+  waitForSeconds: 0
+  residentsAroundRadius: 0
+  gizmoColor: {r: 1, g: 0, b: 0, a: 1}

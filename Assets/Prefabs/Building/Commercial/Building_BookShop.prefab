@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4014465274563437410}
   - component: {fileID: 1134834814731688450}
   - component: {fileID: 6670753175010450408}
+  - component: {fileID: 8756625308881885148}
   m_Layer: 0
   m_Name: Building_BookShop
   m_TagString: Untagged
@@ -126,6 +127,9 @@ MonoBehaviour:
   grassMask:
     serializedVersion: 2
     m_Bits: 64
+  scanRadius: 0
+  increaseHappinessBy: 0
+  revenueOnDemolish: 0
 --- !u!65 &1134834814731688450
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -174,3 +178,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &8756625308881885148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6383161596669435290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3d7b47613f0ab241be3458085ddb0be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingCost: 0
+  isPlaced: 0
+  canBePlaced: 0
+  grassMask:
+    serializedVersion: 2
+    m_Bits: 0
+  scanRadius: 0
+  increaseHappinessBy: 0
+  revenueOnDemolish: 0
+  taxGenerated: 0
+  waitForSeconds: 0
+  residentsAroundRadius: 0
+  gizmoColor: {r: 1, g: 0, b: 0, a: 1}

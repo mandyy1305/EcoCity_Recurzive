@@ -4,6 +4,9 @@ public class BuildingButton : MonoBehaviour
 {
     [SerializeField] private GameObject buildingPrefab;
 
+    [SerializeField] private bool randomBuilding;
+    public BuildingType buildingType;
+
     [SerializeField] private int buildingCost;
 
     private void OnEnable()
@@ -27,7 +30,7 @@ public class BuildingButton : MonoBehaviour
         {
             print("Can afford building");
             //ResourceManager.instance.RemoveCurrency(buildingCost);
-            Instantiate(buildingPrefab);
+            Instantiate(randomBuilding ? BuildingsManager.Instance.GetRandomBuilding(buildingType) : buildingPrefab);
         }
         else
         {

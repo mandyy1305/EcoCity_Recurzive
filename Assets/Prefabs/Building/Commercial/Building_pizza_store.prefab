@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1713777899997610487}
   - component: {fileID: 1204044929976721766}
   - component: {fileID: 6573848364492142760}
+  - component: {fileID: -4909694232722117074}
   m_Layer: 0
   m_Name: Building_pizza_store
   m_TagString: Untagged
@@ -128,6 +129,7 @@ MonoBehaviour:
     m_Bits: 64
   scanRadius: 0
   increaseHappinessBy: 0
+  revenueOnDemolish: 0
 --- !u!65 &1204044929976721766
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -176,3 +178,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &-4909694232722117074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3239127951860057810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3d7b47613f0ab241be3458085ddb0be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingCost: 0
+  isPlaced: 0
+  canBePlaced: 0
+  grassMask:
+    serializedVersion: 2
+    m_Bits: 0
+  scanRadius: 0
+  increaseHappinessBy: 0
+  revenueOnDemolish: 0
+  taxGenerated: 0
+  waitForSeconds: 0
+  residentsAroundRadius: 0
+  gizmoColor: {r: 1, g: 0, b: 0, a: 1}
