@@ -98,6 +98,7 @@ public class Building : MonoBehaviour, ICannotPlaceHere
 
             if (Input.GetMouseButtonDown(0) && canBePlaced)
             {
+                Debug.Log("Trynna get Placed");
                 isPlaced = true;
                 OnBuildingPlaced?.Invoke(this);
                 ResourceManager.instance.RemoveCurrency(buildingCost);

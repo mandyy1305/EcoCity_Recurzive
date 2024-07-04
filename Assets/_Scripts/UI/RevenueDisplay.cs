@@ -21,6 +21,7 @@ public class RevenueDisplay : MonoBehaviour
 
     public void ShowRevenue(float amount)
     {
+        Debug.Log("Coming Here");
         // Set the initial state
         revenueText.text = $"+{amount}";
         revenueText.transform.localScale = Vector3.one * startScale;
