@@ -68,7 +68,7 @@ public class UIManager : MonoBehaviour
         currentHappiness = Mathf.Clamp(currentHappiness, 0, 100);
 
         happinessRadialImage.fillAmount = currentHappiness / 100f;
-        happinessText.text = $"{currentHappiness}%";
+        happinessText.text = $"{Mathf.RoundToInt(currentHappiness)}%";
     }
 
     public void UpdatePopulation(int value)

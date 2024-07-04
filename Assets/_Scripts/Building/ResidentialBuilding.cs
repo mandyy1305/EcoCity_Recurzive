@@ -39,13 +39,20 @@ public class ResidentialBuilding : Building
         if (distance < building.scanRadius)
         {
             //Update Happiness Index
-            GameManager.UpdateAverageHappinessIndexOnBuildingPlaced(residentCapacity, building.increaseHappinessBy);
+            if (building is not IndustrialBuilding)
+            {
+                GameManager.UpdateAverageHappinessIndexOnBuildingPlaced(residentCapacity, building.increaseHappinessBy);
+            }
 
             //Check if a commercial store has been setup
             //To know at the time of establishment how many people are near the store to generate revenue accordingly
             if(building is CommercialBuilding commercialBuilding)
             {
                 commercialBuilding.residentsAroundRadius += residentCapacity;
+            }
+            else if(building is IndustrialBuilding industrialBuilding)
+            {
+                industrialBuilding.residentsAroundRadius += residentCapacity;
             }
         }
 
