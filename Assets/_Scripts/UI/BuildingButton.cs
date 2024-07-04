@@ -21,6 +21,7 @@ public class BuildingButton : MonoBehaviour
 
     private void Start()
     {
+        if (!randomBuilding)
         buildingCost = buildingPrefab.GetComponent<Building>().GetBuildingCost();
     }
 

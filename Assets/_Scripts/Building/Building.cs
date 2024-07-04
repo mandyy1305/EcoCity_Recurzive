@@ -13,7 +13,7 @@ public class Building : MonoBehaviour, ICannotPlaceHere
 
     [SerializeField] protected LayerMask grassMask;
 
-    protected Color defaultColor;
+    protected List<Color> defaultColors;
     protected Color errorColor = Color.red;
 
     protected int revenueGenerated;
@@ -29,7 +29,12 @@ public class Building : MonoBehaviour, ICannotPlaceHere
 
     public virtual void Start()
     {
-        defaultColor = GetComponent<Renderer>().material.color;
+        defaultColors = new List<Color>();
+
+        foreach (Material mat in GetComponent<MeshRenderer>().materials)
+        {
+            defaultColors.Add(mat.color);
+        }
 
         canBePlaced = true;
         rotation = transform.rotation;
@@ -41,7 +46,7 @@ public class Building : MonoBehaviour, ICannotPlaceHere
     {
         if(other.TryGetComponent(out ICannotPlaceHere iCannotPlaceHere))
         {
-            GetComponent<Renderer>().material.color = errorColor;
+            DisplayErrorColor();
             canBePlaced = false;
         }
     }
@@ -50,7 +55,7 @@ public class Building : MonoBehaviour, ICannotPlaceHere
     {
         if (other.TryGetComponent(out ICannotPlaceHere iCannotPlaceHere))
         {
-            GetComponent<Renderer>().material.color = errorColor;
+            DisplayErrorColor();
             canBePlaced = false;
         }
     }
@@ -59,7 +64,7 @@ public class Building : MonoBehaviour, ICannotPlaceHere
     {
         if (other.TryGetComponent(out ICannotPlaceHere iCannotPlaceHere))
         {
-            GetComponent<Renderer>().material.color = defaultColor;
+            DisplayDefaultColor();
             canBePlaced = true;
         }
     }
@@ -117,6 +122,22 @@ public class Building : MonoBehaviour, ICannotPlaceHere
     {
         ResourceManager.instance.AddCurrency((int)revenueOnDemolish);
         Destroy(gameObject);
+    }
+
+    private void DisplayErrorColor()
+    {
+        foreach (Material mat in GetComponent<MeshRenderer>().materials)
+        {
+            mat.color = errorColor;
+        }
+    }
+
+    private void DisplayDefaultColor()
+    {
+        for (int i = 0; i < defaultColors.Count; i++)
+        {
+            GetComponent<MeshRenderer>().materials[i].color = defaultColors[i];
+        }
     }
 
 }
