@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4478635730664392643}
   - component: {fileID: 8018941846754018518}
   - component: {fileID: 2166649371524878721}
-  - component: {fileID: 9104541460293571226}
+  - component: {fileID: 5174672986796389301}
   m_Layer: 0
   m_Name: Building_Small_01
   m_TagString: Untagged
@@ -156,7 +156,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &9104541460293571226
+--- !u!114 &5174672986796389301
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2323358304623239705}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba6f6f9abe53bc5498b831267543c14c, type: 3}
+  m_Script: {fileID: 11500000, guid: afd0672d5890401449f53aa78dc44579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buildingCost: 0
@@ -174,3 +174,8 @@ MonoBehaviour:
   grassMask:
     serializedVersion: 2
     m_Bits: 64
+  scanRadius: 0
+  revenueOnDemolish: 0
+  increaseHappinessBy: 5
+  residentCapacity: 5
+  gizmoColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}

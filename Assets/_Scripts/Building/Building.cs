@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,13 +17,23 @@ public class Building : MonoBehaviour, ICannotPlaceHere
     protected Color errorColor = Color.red;
 
     protected int revenueGenerated;
+    [Range(25f, 80f)]
+    public float scanRadius;
+    public float increaseHappinessBy;
 
-    private void Start()
+    public static event Action<Building> OnBuildingPlaced;
+
+    
+    
+
+    public virtual void Start()
     {
         defaultColor = GetComponent<Renderer>().material.color;
 
         canBePlaced = true;
         rotation = transform.rotation;
+
+        scanRadius = 100f;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -57,7 +68,7 @@ public class Building : MonoBehaviour, ICannotPlaceHere
         return buildingCost;
     }
 
-    private void Update()
+    public virtual void Update()
     {
         if (isPlaced)
             return;
@@ -82,6 +93,7 @@ public class Building : MonoBehaviour, ICannotPlaceHere
             if (Input.GetMouseButtonDown(0) && canBePlaced)
             {
                 isPlaced = true;
+                OnBuildingPlaced?.Invoke(this);
             }
         }
 

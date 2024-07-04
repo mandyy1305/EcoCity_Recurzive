@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 4337347192193973829}
   - component: {fileID: 4725125673950282315}
   - component: {fileID: 8969497552568986526}
-  - component: {fileID: 7313450288292517823}
   - component: {fileID: 9100345035276363021}
+  - component: {fileID: 5975497884724231025}
   m_Layer: 0
   m_Name: Building_Small_04
   m_TagString: Untagged
@@ -135,24 +135,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &7313450288292517823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6352760601777394886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba6f6f9abe53bc5498b831267543c14c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buildingCost: 0
-  isPlaced: 0
-  canBePlaced: 0
-  grassMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!65 &9100345035276363021
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -174,3 +156,26 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 28, y: 7.870478, z: 19}
   m_Center: {x: 0.7986021, y: 3.7148387, z: 0.11547756}
+--- !u!114 &5975497884724231025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6352760601777394886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd0672d5890401449f53aa78dc44579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingCost: 0
+  isPlaced: 0
+  canBePlaced: 0
+  grassMask:
+    serializedVersion: 2
+    m_Bits: 64
+  scanRadius: 0
+  revenueOnDemolish: 0
+  increaseHappinessBy: 5
+  residentCapacity: 5
+  gizmoColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
