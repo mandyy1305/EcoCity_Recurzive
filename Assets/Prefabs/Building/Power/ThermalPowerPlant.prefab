@@ -182,14 +182,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 833f0745f7b14ac4b96c7def418a3682, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingCost: 0
+  buildingCost: 350
   isPlaced: 0
   canBePlaced: 0
   grassMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   scanRadius: 0
-  increaseHappinessBy: 0
+  increaseHappinessBy: 5
   revenueOnDemolish: 0
-  waitForSeconds: 0
+  waitForSeconds: 3
   residentsAroundRadius: 0

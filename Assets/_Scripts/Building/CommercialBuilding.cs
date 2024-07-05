@@ -37,8 +37,8 @@ public class CommercialBuilding : Building
 
             if (isPlaced)
             {
-                ResourceManager.instance.AddCurrency(1);
-                taxDisplay.ShowRevenue(taxGenerated);
+                ResourceManager.instance.AddCurrency(2);
+                taxDisplay.ShowRevenue(2);
             }
                 
         }

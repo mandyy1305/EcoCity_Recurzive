@@ -73,4 +73,23 @@ public class IndustrialBuilding : Building
 
     #endregion
 
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        DrawCircle(transform.position, scanRadius, 100);
+    }
+    void DrawCircle(Vector3 position, float radius, int segments)
+    {
+        float angle = 2 * Mathf.PI / segments;
+        Vector3 prevPoint = position + new Vector3(radius, 0, 0);
+
+        for (int i = 1; i <= segments; i++)
+        {
+            float x = Mathf.Cos(angle * i) * radius;
+            float z = Mathf.Sin(angle * i) * radius;
+            Vector3 newPoint = position + new Vector3(x, 0, z);
+            Gizmos.DrawLine(prevPoint, newPoint);
+            prevPoint = newPoint;
+        }
+    }
 }

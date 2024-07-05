@@ -22,11 +22,12 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        totalResidents = 1000;
+        totalResidents = 500;
+        UIManager.Instance.UpdatePopulation(totalResidents);
         totalHomedResidents = 0;
         totalHomelessResidents = totalResidents - totalHomedResidents;
 
-        averageHappinessIndex = 82f;
+        averageHappinessIndex = 62f;
         UIManager.Instance.UpdateHappiness(averageHappinessIndex);
 
         coroutine = StartCoroutine(IncrementPopulation());
@@ -57,7 +58,7 @@ public class GameManager : MonoBehaviour
 
         float updatedHappinessTotal = currentHappinessTotal + newHappinessTotal;
         averageHappinessIndex = updatedHappinessTotal / totalResidents;
-
+        averageHappinessIndex = Mathf.Clamp(averageHappinessIndex, 0, 100);
         Debug.Log("Updated Happiness: " + averageHappinessIndex);
 
         //Change UI Happiness
@@ -74,7 +75,7 @@ public class GameManager : MonoBehaviour
             UIManager.Instance.UpdatePopulation(totalResidents);
 
             //Decrement Happiness index
-            averageHappinessIndex -= totalHomelessResidents * 0.001f;
+            averageHappinessIndex -= totalHomelessResidents * 0.0002f;
             UIManager.Instance.UpdateHappiness(averageHappinessIndex);
         }
     }
