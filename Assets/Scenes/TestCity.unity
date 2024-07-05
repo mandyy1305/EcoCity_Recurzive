@@ -4437,7 +4437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604d2d338b12da84099f8fb47e05ac6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingPrefab: {fileID: 1805014954534691036, guid: ff4c5809c0114104a95f799a8f7fde88,
+  buildingPrefab: {fileID: 7028606043523191239, guid: bb42dd4f17d14db41838b59f07b5fc68,
     type: 3}
   randomBuilding: 0
   buildingType: 0
@@ -7351,7 +7351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604d2d338b12da84099f8fb47e05ac6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingPrefab: {fileID: 2323358304623239705, guid: f13a70377c82ad642ab34eca70093006,
+  buildingPrefab: {fileID: 5934440316939482994, guid: 9277f84f3e84077418762b88391ef6d0,
     type: 3}
   randomBuilding: 0
   buildingType: 0
