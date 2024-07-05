@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 833f0745f7b14ac4b96c7def418a3682, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingCost: 0
+  buildingCost: 150
   isPlaced: 0
   canBePlaced: 0
   grassMask:

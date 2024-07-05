@@ -848,8 +848,8 @@ GameObject:
   - component: {fileID: 2506598597755759597}
   - component: {fileID: 7861792027942345796}
   - component: {fileID: 5220615395919767274}
-  - component: {fileID: 6775686727656478420}
   - component: {fileID: 3295122263745875862}
+  - component: {fileID: 3249130505019705302}
   m_Layer: 0
   m_Name: FireFighter
   m_TagString: Untagged
@@ -937,27 +937,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &6775686727656478420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5934440316939482994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba6f6f9abe53bc5498b831267543c14c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buildingCost: 0
-  isPlaced: 0
-  canBePlaced: 0
-  grassMask:
-    serializedVersion: 2
-    m_Bits: 64
-  scanRadius: 0
-  increaseHappinessBy: 0
-  revenueOnDemolish: 0
 --- !u!23 &3295122263745875862
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1000,6 +979,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3249130505019705302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5934440316939482994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 833f0745f7b14ac4b96c7def418a3682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingCost: 100
+  isPlaced: 0
+  canBePlaced: 0
+  grassMask:
+    serializedVersion: 2
+    m_Bits: 64
+  scanRadius: 0
+  increaseHappinessBy: 10
+  revenueOnDemolish: 0
+  waitForSeconds: 3
+  residentsAroundRadius: 0
 --- !u!1 &6089203071470808338
 GameObject:
   m_ObjectHideFlags: 0

@@ -32,7 +32,7 @@ public class EssentialBuilding : Building
 
             if (isPlaced)
             {
-                GameManager.UpdateAverageHappinessIndexOnBuildingPlaced(residentsAroundRadius, -increaseHappinessBy);
+                GameManager.UpdateAverageHappinessIndexOnBuildingPlaced(residentsAroundRadius, increaseHappinessBy);
             }
 
         }
