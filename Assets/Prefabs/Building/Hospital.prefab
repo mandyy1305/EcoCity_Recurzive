@@ -95,8 +95,8 @@ GameObject:
   - component: {fileID: 8254290391562743637}
   - component: {fileID: 7314881287119791160}
   - component: {fileID: 5724297110345185688}
-  - component: {fileID: -8067603714246495522}
   - component: {fileID: 3303882830352045200}
+  - component: {fileID: 7552961068412108804}
   m_Layer: 0
   m_Name: Hospital
   m_TagString: Untagged
@@ -191,27 +191,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 35, y: 1, z: 35}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-8067603714246495522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 798568895090600516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba6f6f9abe53bc5498b831267543c14c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buildingCost: 0
-  isPlaced: 0
-  canBePlaced: 0
-  grassMask:
-    serializedVersion: 2
-    m_Bits: 64
-  scanRadius: 52.2
-  increaseHappinessBy: 0
-  revenueOnDemolish: 0
 --- !u!23 &3303882830352045200
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -254,6 +233,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7552961068412108804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798568895090600516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 833f0745f7b14ac4b96c7def418a3682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingCost: 100
+  isPlaced: 0
+  canBePlaced: 0
+  grassMask:
+    serializedVersion: 2
+    m_Bits: 64
+  scanRadius: 0
+  increaseHappinessBy: 10
+  revenueOnDemolish: 0
+  waitForSeconds: 3
+  residentsAroundRadius: 0
 --- !u!1 &1563280162614296702
 GameObject:
   m_ObjectHideFlags: 0

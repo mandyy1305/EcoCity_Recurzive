@@ -2191,8 +2191,8 @@ GameObject:
   - component: {fileID: 1719096333634571773}
   - component: {fileID: 7617650345649812345}
   - component: {fileID: 6316789371535477146}
-  - component: {fileID: 6923300423478016781}
   - component: {fileID: 6122571857019511991}
+  - component: {fileID: 5332672683855068221}
   m_Layer: 0
   m_Name: policeStation
   m_TagString: Untagged
@@ -2309,27 +2309,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6923300423478016781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7028606043523191239}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba6f6f9abe53bc5498b831267543c14c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buildingCost: 0
-  isPlaced: 0
-  canBePlaced: 0
-  grassMask:
-    serializedVersion: 2
-    m_Bits: 64
-  scanRadius: 0
-  increaseHappinessBy: 0
-  revenueOnDemolish: 0
 --- !u!54 &6122571857019511991
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2357,6 +2336,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &5332672683855068221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7028606043523191239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 833f0745f7b14ac4b96c7def418a3682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingCost: 100
+  isPlaced: 0
+  canBePlaced: 0
+  grassMask:
+    serializedVersion: 2
+    m_Bits: 64
+  scanRadius: 0
+  increaseHappinessBy: 10
+  revenueOnDemolish: 0
+  waitForSeconds: 3
+  residentsAroundRadius: 0
 --- !u!1 &7835111250981926401
 GameObject:
   m_ObjectHideFlags: 0

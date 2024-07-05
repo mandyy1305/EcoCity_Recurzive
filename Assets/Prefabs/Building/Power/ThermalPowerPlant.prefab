@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4655058428138991625}
   - component: {fileID: 7630028808130315673}
   - component: {fileID: 7973378456821087571}
-  - component: {fileID: 4752512264058893075}
+  - component: {fileID: -8498273236017457287}
   m_Layer: 0
   m_Name: ThermalPowerPlant
   m_TagString: Untagged
@@ -170,7 +170,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.9, y: 0.8, z: 0.46212748}
   m_Center: {x: -0.00068707764, y: 0.000010654328, z: 0.22222228}
---- !u!114 &4752512264058893075
+--- !u!114 &-8498273236017457287
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -179,7 +179,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7910718071102169629}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba6f6f9abe53bc5498b831267543c14c, type: 3}
+  m_Script: {fileID: 11500000, guid: 833f0745f7b14ac4b96c7def418a3682, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buildingCost: 0
@@ -187,7 +187,9 @@ MonoBehaviour:
   canBePlaced: 0
   grassMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   scanRadius: 0
   increaseHappinessBy: 0
   revenueOnDemolish: 0
+  waitForSeconds: 0
+  residentsAroundRadius: 0

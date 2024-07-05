@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 763292567310490305}
   - component: {fileID: 5484208696000951774}
   - component: {fileID: 3137248798040625738}
-  - component: {fileID: 1493617641978088458}
   - component: {fileID: 4877183986255878933}
   - component: {fileID: 5458756360392786209}
+  - component: {fileID: 6364369989755632973}
   m_Layer: 0
   m_Name: NuclearPowerPlant
   m_TagString: Untagged
@@ -103,27 +103,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1493617641978088458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8863412325755035797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba6f6f9abe53bc5498b831267543c14c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buildingCost: 0
-  isPlaced: 0
-  canBePlaced: 0
-  grassMask:
-    serializedVersion: 2
-    m_Bits: 64
-  scanRadius: 0
-  increaseHappinessBy: 0
-  revenueOnDemolish: 0
 --- !u!65 &4877183986255878933
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -172,3 +151,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &6364369989755632973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8863412325755035797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 833f0745f7b14ac4b96c7def418a3682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingCost: 0
+  isPlaced: 0
+  canBePlaced: 0
+  grassMask:
+    serializedVersion: 2
+    m_Bits: 0
+  scanRadius: 0
+  increaseHappinessBy: 0
+  revenueOnDemolish: 0
+  waitForSeconds: 0
+  residentsAroundRadius: 0
